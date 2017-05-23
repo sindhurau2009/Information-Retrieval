@@ -19,6 +19,7 @@ The goal of this project is to implement various project models, to evaluate the
       </similarity>
   
 BM25 Model:
+
 12. Okapi BM25 (BM stands for Best Match) is based on the probabilistic retrieval framework developed by Stephen E. Robertson, Karen Sparck Jones and others.
 13. It ranks documents based on the query terms appearing in each document and is independent of their relative proximity.
 14. It can be implemented in Solr using the following declaration in managed-schema.xml in the core:
@@ -29,6 +30,7 @@ BM25 Model:
 15. K1 can be any value in the range [1.2,2.0] and b = 0.75 usually.
 
 Divergence from Randomness Model:
+
 16. Term weights are computed by measuring the divergence between a term distribution produced by a random process and the actual term distribution.
 17. There are three components in DFR:
     BasicModel
@@ -44,14 +46,18 @@ Divergence from Randomness Model:
     </similarity>
     
 Optimized Scores:
+
 VSM:
+
 20. The MAP value for the given set of queries using the indexed tweets is found to be optimized when synonyms, stopwords and stemmers are removed from the data while being indexed.
 21. MAP for this implementation is 0.6858.
 
 BM25:
+
 22. Synonyms, stopwords and stemming tokenizers are included in the optimized implementation of this model too so that query expansion will help improve the performance of the model.
 23. The MAP score is 0.6995 for the set of parameters, k1 - 0.6, b - 0.2.
 
 DFR:
+
 24. Synonyms, stopwords and stemming tokenizers are included in the optimized implementation of this model too so that query expansion will help improve the performance of the model.
 25. The MAP score when c is 8, normalization is H2, afterEffect is B and basicModel is G is 0.7043.
